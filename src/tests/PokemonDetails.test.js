@@ -26,6 +26,9 @@ describe('Pokemon.js tests', () => {
       name: 'Summary',
     });
     expect(summary).toBeInTheDocument();
+
+    const summaryText = screen.getByText(pikachu.summary);
+    expect(summaryText).toBeInTheDocument();
   });
 
   test(`Teste se existe na página uma seção com os mapas contendo

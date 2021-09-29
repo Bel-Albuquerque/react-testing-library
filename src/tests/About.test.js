@@ -19,9 +19,11 @@ describe('About.js tests', () => {
     const { history } = renderWithRouter(<App />);
     history.push('/about');
 
-    const paragraphs = screen.getAllByRole('paragraph');
+    const paragraph1 = screen.getByText(/This application simulates a Pokédex/i);
+    const paragraph2 = screen.getByText(/One can filter Pokémons by type,/i);
 
-    expect(paragraphs.length).toBe(2);
+    expect(paragraph1).toBeInTheDocument();
+    expect(paragraph2).toBeInTheDocument();
   });
 
   test('Teste se a página contém a seguinte imagem de uma Pokédex: https://cdn2.bulbagarden.net/upload/thumb/8/86/Gen_I_Pok%C3%A9dex.png/800px-Gen_I_Pok%C3%A9dex.png', () => {

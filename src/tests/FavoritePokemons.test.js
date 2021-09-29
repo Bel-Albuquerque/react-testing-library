@@ -1,7 +1,5 @@
 import React from 'react';
-import { screen, render } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { MemoryRouter } from 'react-router-dom';
+import { screen } from '@testing-library/react';
 import App from '../App';
 import renderWithRouter from './utils/renderWithRouter';
 import {
@@ -9,7 +7,8 @@ import {
 } from '../services/pokedexService';
 
 describe('FavoritePokemons.js tests', () => {
-  test('Teste se é exibido na tela a mensagem No favorite pokemon found, se a pessoa não tiver pokémons favoritos.', () => {
+  test(`Teste se é exibido na tela a mensagem No favorite pokemon found, 
+  se a pessoa não tiver pokémons favoritos.`, () => {
     const { history } = renderWithRouter(<App />);
 
     history.push('/favorites');
@@ -20,6 +19,4 @@ describe('FavoritePokemons.js tests', () => {
 
     expect(noFavorite).toBeInTheDocument();
   });
-
-
 });

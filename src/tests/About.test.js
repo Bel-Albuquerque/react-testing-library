@@ -1,7 +1,5 @@
 import React from 'react';
-import { screen, render } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
-import { MemoryRouter } from 'react-router-dom';
+import { screen } from '@testing-library/react';
 import App from '../App';
 import renderWithRouter from './utils/renderWithRouter';
 

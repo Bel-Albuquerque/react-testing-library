@@ -5,7 +5,7 @@ import App from '../App';
 import renderWithRouter from './utils/renderWithRouter';
 
 describe('Pokedex.js tests', () => {
-  test('Teste se página contém um heading h2 com o texto Encountered pokémons', () => {
+  test('Testa se página contém um heading h2 com o texto Encountered pokémons', () => {
     renderWithRouter(<App />);
 
     const pokedexTextH2 = screen.getByRole('heading', {
@@ -16,7 +16,8 @@ describe('Pokedex.js tests', () => {
     expect(pokedexTextH2).toBeInTheDocument();
   });
 
-  test('Teste se é exibido o próximo Pokémon da lista quando o botão', () => {
+  test(`Testa se é exibido o próximo Pokémon da lista quando o botão e 
+  se é exibido apenas um poquemon por vez.`, () => {
     renderWithRouter(<App />);
     const buttonNextPokemon = screen.getByRole('button', { name: 'Próximo pokémon' });
 
@@ -38,6 +39,13 @@ describe('Pokedex.js tests', () => {
 
     const pikachu = screen.getByText('Pikachu');
     expect(pikachu).toBeInTheDocument();
+  });
+
+  test(`Testa se a Pokédex tem os botões de filtro, o botão "All" e se todos
+  eles funcionam como deveria.`, () => {
+    renderWithRouter(<App />);
+
+    const pikachu = screen.getByText('Pikachu');
 
     const buttonPoison = screen.getByRole('button', { name: 'Poison' });
     expect(buttonPoison).toBeInTheDocument();

@@ -50,8 +50,8 @@ describe('Pokemon.js tests', () => {
     expect(mapImages[1]).toHaveAttribute('src', pikachu.foundAt[1].map);
   });
 
-  test(`Teste se existe na página uma seção com os mapas contendo
-  as localizações do pokémon`, () => {
+  test(`Teste se o usuário pode favoritar um pokémon através da página de 
+  detalhes.`, () => {
     const { history } = renderWithRouter(<App />);
     history.push(caminhoPikachu);
 
